@@ -1,6 +1,7 @@
 ﻿using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
 using MSTicket.Data;
+using System.Linq;
 using System.Threading.Tasks;
 
 namespace MSTicket.Controllers
@@ -16,7 +17,7 @@ namespace MSTicket.Controllers
 
         public async Task<IActionResult> Index() //асинхронный метод 
         {
-            var allMovies = await _context.Movies.ToListAsync();
+            var allMovies = await _context.Movies.Include(n=> n.Cinema).OrderBy(n => n.Name).ToListAsync();
             return View(allMovies);
         }
     }
