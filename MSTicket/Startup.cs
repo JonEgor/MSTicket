@@ -51,6 +51,7 @@ namespace MSTicket
                 app.UseHsts();
             }
             app.UseHttpsRedirection();
+            
             app.UseStaticFiles();
 
             app.UseRouting();
@@ -63,6 +64,8 @@ namespace MSTicket
                     name: "default",
                     pattern: "{controller=Home}/{action=Index}/{id?}");
             });
+            //Seed database
+            AppDblnitializer.Seed(app);
         }
     }
 }
