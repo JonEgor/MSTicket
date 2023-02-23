@@ -10,6 +10,7 @@ using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
+using MSTicket.Data.Services;
 
 namespace MSTicket
 {
@@ -30,7 +31,10 @@ namespace MSTicket
             //DbContext configuration  ( Конфигурация DB ) 
 
             services.AddDbContext<AppDbContext>(options => options.UseSqlServer(Configuration.GetConnectionString("DefaultConnectionString")));
-
+            
+            //Services configuration
+            services.AddScoped<IActorsService, ActorsService>();
+            
             services.AddControllersWithViews();
 
 
