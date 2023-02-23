@@ -6,10 +6,10 @@ namespace MSTicket.Data.Services
 {
     public interface IActorsService
     {
-        Task<IEnumerable<Actor>> GetAll();
-        Actor GetById(int id);
+        Task<IEnumerable<Actor>> GetAllAsync();
+        Task<Actor> GetByIdAsync(int id);
+        Task AddAsync(Actor actor);
 
-        void Add(Actor actor); // метод добавления данных 
         Actor Update(int id, Actor newActor); //Обновление данных 
 
         void Delete(int id); //Метод удаления 
