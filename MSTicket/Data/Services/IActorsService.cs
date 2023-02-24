@@ -12,6 +12,6 @@ namespace MSTicket.Data.Services
 
        Task<Actor> UpdateAsync(int id, Actor newActor); //Обновление данных 
 
-        void Delete(int id); //Метод удаления 
+        Task DeleteAsync(int id); //Метод удаления 
     }
 }
