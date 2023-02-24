@@ -10,7 +10,7 @@ namespace MSTicket.Data.Services
         Task<Actor> GetByIdAsync(int id);
         Task AddAsync(Actor actor);
 
-        Actor Update(int id, Actor newActor); //Обновление данных 
+       Task<Actor> UpdateAsync(int id, Actor newActor); //Обновление данных 
 
         void Delete(int id); //Метод удаления 
     }

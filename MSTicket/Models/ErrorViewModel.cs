@@ -6,4 +6,4 @@ namespace MTickets.Models
 
         public bool ShowRequestId => !string.IsNullOrEmpty(RequestId);
     }
-} //
+} 
