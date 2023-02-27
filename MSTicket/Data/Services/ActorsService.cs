@@ -30,18 +30,7 @@ namespace MSTicket.Data.Services
             await _context.SaveChangesAsync();
         }
 
-        public async Task<IEnumerable<Actor>> GetAllAsync()
-        {
-            var resulat = await _context.Actors.ToListAsync();
-            return resulat;
-        }
-
-        public async Task<Actor> GetByIdAsync(int id)
-        {
-            var result = await _context.Actors.FirstOrDefaultAsync(n => n.Id == id);
-            return result;
-        }
-
+        
         public async Task<Actor> UpdateAsync(int id, Actor newActor)
         {
             _context.Update(newActor);
