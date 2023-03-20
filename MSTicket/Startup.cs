@@ -28,14 +28,18 @@ namespace MSTicket
         public void ConfigureServices(IServiceCollection services)
         {
 
-            //DbContext configuration  ( Конфигурация DB ) 
+            //DbContext configuration  ( Конфигурация DB ) Настройка SQL сервера 
 
             services.AddDbContext<AppDbContext>(options => options.UseSqlServer(Configuration.GetConnectionString("DefaultConnectionString")));
             
             //Services configuration
             services.AddScoped<IActorsService, ActorsService>();
+           
+            services.AddScoped<IProducersServices, ProducerService>();
             
             services.AddControllersWithViews();
+
+            services.AddScoped<ICinemasService, CinemasService>();
 
 
 

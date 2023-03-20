@@ -10,8 +10,8 @@ namespace MSTicket.Data.Base
         Task<T> GetByIdAsync(int id);
         Task AddAsync(T entity);
 
-        Task UpdateAsync(int id, T entity); //Обновление данных 
-
-        Task DeleteAsync(int id); //Метод удаления 
+        Task UpdateAsync(int id, T entity);//Обновление данных 
+        Task DeleteAsync(int id); //Метод удаления
+         
     }
 }
