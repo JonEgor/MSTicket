@@ -1,17 +1,13 @@
 ﻿using MTickets.Models;
 using System.Collections.Generic;
 using System.Threading.Tasks;
+using MSTicket.Data.Base;
 
 namespace MSTicket.Data.Services
 {
-    public interface IActorsService
+    public interface IActorsService:IEntityBaseRepository<Actor> // импортирует пространство имен, а пространство имен является базой данных.
+                                                                 // Сущность в этом случае является векторным классом.
     {
-        Task<IEnumerable<Actor>> GetAllAsync();
-        Task<Actor> GetByIdAsync(int id);
-        Task AddAsync(Actor actor);
-
-       Task<Actor> UpdateAsync(int id, Actor newActor); //Обновление данных 
-
-        Task DeleteAsync(int id); //Метод удаления 
+   
     }
 }
